@@ -14,7 +14,7 @@ public class IpController {
 	
 	// Sends ping request to a provided IP address 
 	@RequestMapping("/check")
-	public static void sendPingRequest(@RequestParam(value="ip", defaultValue="0.0.0.0") String ipAddress) { 
+	public static void sendPingRequest(@RequestParam(value="ip", defaultValue="255.255.255.0") String ipAddress) { 
 	    try{
 	    	InetAddress geek = InetAddress.getByName(ipAddress); 
 		    System.out.println("Sending Ping Request to " + ipAddress); 
