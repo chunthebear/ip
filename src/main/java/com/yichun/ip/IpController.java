@@ -11,7 +11,7 @@ public class IpController {
 	// Sends ping request to a provided IP address 
 	// Codes adapted from https://www.geeksforgeeks.org/pinging-ip-address-java/
 	@RequestMapping("/check")
-	public static Ip sendPingRequest(@RequestParam(value="ip", defaultValue="255.255.255.0") String ipAddress) { 
+	public static Ip checkStatus(@RequestParam(value="ip", defaultValue="255.255.255.0") String ipAddress) { 
 		return new Ip(ipAddress);
 	} 
 }

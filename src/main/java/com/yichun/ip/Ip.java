@@ -6,13 +6,13 @@ import java.net.UnknownHostException;
 
 public class Ip {
 
-	private final String ip;
-	private final String status;
+	private String ip;
+	private String status;
 	
 	public Ip(String ip) {
 		super();
 		this.ip = ip;
-		this.status = checkStatus(ip);
+		this.status = setStatus();
 	}
 	
 	public String getIp() {
@@ -23,11 +23,11 @@ public class Ip {
 		return status;
 	}
 	
-	public static String checkStatus(String ipAddress) { 
+	public String setStatus() { 
 		String status = "";
 		try {
-			InetAddress geek = InetAddress.getByName(ipAddress); 
-			System.out.println("Sending Ping Request to " + ipAddress); 
+			InetAddress geek = InetAddress.getByName(this.ip); 
+			System.out.println("Sending Ping Request to " + this.ip); 
 			if (geek.isReachable(5000)) {
 				System.out.println("Host is reachable"); 
 				status = "Reachable";
