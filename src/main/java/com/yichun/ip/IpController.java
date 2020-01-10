@@ -17,7 +17,7 @@ public class IpController {
 	@RequestMapping("/check")
 	public static Ip sendPingRequest(@RequestParam(value="ip", defaultValue="255.255.255.0") String ipAddress) { 
 		String status = "";
-	    try{
+		try{
 	    	InetAddress geek = InetAddress.getByName(ipAddress); 
 		    System.out.println("Sending Ping Request to " + ipAddress); 
 		    if (geek.isReachable(5000)) {
@@ -27,11 +27,11 @@ public class IpController {
 		    	System.out.println("Sorry ! We can't reach to this host"); 
 		    	status = "Unreachable";
 		    }
-	    } catch (UnknownHostException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+		} catch (UnknownHostException e) {
+	    	e.printStackTrace();
+	    } catch (IOException e) {
+	    	e.printStackTrace();
+	    }
 	    return new Ip(ipAddress, status);
 	} 
 }
