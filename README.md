@@ -1,3 +1,5 @@
+This project is built using Spring Boot.
+
 This is a service that will accept HTTP GET requests at:
 
 **http://localhost:8080/check**
